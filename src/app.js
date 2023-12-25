@@ -4,6 +4,8 @@ import colors from "colors";
 import authRouter from "./routes/authRoute.js";
 import userRouter from "./routes/userRoute.js";
 // import errorHandler from "./middlewares/errorHandler.js"
+import postsRoute from "./routes/postRoute.js";
+import categoryRoute from "./routes/categoryRoute.js"
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 dotenv.config();
@@ -25,6 +27,10 @@ app.use(cookieParser());
 // router
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/user/auth", authRouter);
+// posts route
+app.use("/api/v1/posts", postsRoute);
+// category route
+app.use("/api/v1/category", categoryRoute)
 
 // error handler middleware
 // app.use(errorHandler);

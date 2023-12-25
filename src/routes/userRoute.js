@@ -1,10 +1,13 @@
 import express from "express";
-import { getAllUser } from "../controllers/userController.js";
+import { deleteUser, getAllUser, updateUser } from "../controllers/userController.js";
 import tokenVerify from "../middlewares/tokenVerify.js";
 
 // inisiate router
 const router = express.Router();
 
-router.route("/").get(tokenVerify, getAllUser);
+router.use(tokenVerify);
+
+router.route("/").get(getAllUser);
+router.route("/:id").put(updateUser).delete(deleteUser);
 
 export default router;

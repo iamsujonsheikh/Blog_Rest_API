@@ -22,7 +22,7 @@ export const signUp = async (req, res) => {
 
         // exist username
         if (existUsername) {
-            return res.status(400).send("username already exist.")
+            return res.status(400).send("user name already exist.")
         };
 
         // exist email
@@ -102,6 +102,16 @@ export const login = async (req, res) => {
             message: "User not found!",
             error: error.message
         })
+    }
+};
+
+
+// updateUser
+export const updateUser = async (res, req) => {
+    try {
+
+    } catch (error) {
+        res.status(400).send("");
     }
 };
 
